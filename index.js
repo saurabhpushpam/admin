@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 const getroute= require("./routes/getRoutes");
 app.use('/api', getroute);
 
-const productroute= require("./routes/getRoutes");
+const productroute= require("./routes/productRoutes");
 app.use('/api', productroute);
 
 

@@ -5,20 +5,20 @@ const user_controller= require("../controllers/userController");
 const product_controller= require("../controllers/productController");
 
 
-get_route.set('view engine', 'ejs');
-get_route.set('views', "./views/users");
+product_route.set('view engine', 'ejs');
+product_route.set('views', "./views/users");
 //get_route.set('views', __dirname + '/views/users');
 
 const bodyParser= require("body-parser");
-get_route.use(bodyParser.json());
-get_route.use(bodyParser.urlencoded({extended: true}));
+product_route.use(bodyParser.json());
+product_route.use(bodyParser.urlencoded({extended: true}));
 const auth= require("../middleware/auth");
 
 const multer= require("multer");
 const path= require("path");
 
 
-get_route.use(express.static('public'));
+product_route.use(express.static('public'));
 
 const storage= multer.diskStorage({
     destination: function(req, file, cb){
