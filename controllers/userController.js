@@ -171,7 +171,8 @@ const resetpassword = async (req, res) => {
     try {
 
         //const token = req.query.token;
-        const token = req.params.token;
+      //  const token = req.params.token;
+      const token = req.headers.authorization;
         const tokenData = await user.findOne({ tokens: token });
 
         if (tokenData) {
@@ -228,7 +229,7 @@ const sendresetpasswordmail = async (username, email, token) => {
             from: config.emailUser,
             to: email,
             subject: 'For reset password',
-            html: '<p> Hii ' + username + ', please click the link <a href= "https://title-74im.onrender.com/api/resetpassword"> and reset your password </a>'
+            html: '<p> Hii ' + username + ', please click the link <a href= https://saurav-admin.onrender.com/api/resetpassword"> and reset your password </a>'
         }
 
         transporter.sendMail(mailOption, function (error, info) {
@@ -404,8 +405,9 @@ const fogetuser = async (req, res) => {
 const logout = async (req, res) => {
     try {
 
-        const token = req.params.token;
+        //const token = req.params.token;
         //  const token= req.query.token;
+        const token = req.headers.authorization;
 
         const tokenData = await user.findOne({ tokens: token });
 
@@ -435,8 +437,9 @@ const logout = async (req, res) => {
 const logoutone = async (req, res) => {
     try {
 
-        const token = req.params.token;
+        //const token = req.params.token;
         //  const token= req.query.token;
+        const token = req.headers.authorization;
 
         const tokenData = await user.findOne({ tokens: token });
 

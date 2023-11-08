@@ -227,6 +227,14 @@ const getimagebyid = async (req, res) => {
 
 */
 
+// get all data
+const getalldatabyid = async (req, res) => {
+
+    try {
+       } catch (err) {
+      }
+    }
+
 module.exports = {
     getdetail,
     getdetailbyid,
@@ -235,6 +243,6 @@ module.exports = {
     deleteproduct,
     getimage,
     // getimagebyid,
-     
+     getalldatabyid
 
 }
