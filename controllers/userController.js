@@ -229,7 +229,7 @@ const sendresetpasswordmail = async (username, email, token) => {
             from: config.emailUser,
             to: email,
             subject: 'For reset password',
-            html: '<p> Hii ' + username + ', please click the link <a href= https://saurav-admin.onrender.com/api/resetpassword"> and reset your password </a>'
+            html: '<p> Hii ' + username + ', please click the link <a href= https://saurav-admin.onrender.com/api/resetpassword> and reset your password </a>'
         }
 
         transporter.sendMail(mailOption, function (error, info) {
