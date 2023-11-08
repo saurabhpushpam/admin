@@ -98,7 +98,7 @@ const getdetailbyid = async (req, res) => {
 const insertproduct = async (req, res) => {
 
     try {
-
+       // const token = req.headers.authorization;
         const getdata = new userproduct({
             title: req.body.title,
             description: req.body.description,
@@ -121,6 +121,7 @@ const insertproduct = async (req, res) => {
 const updateproduct = async (req, res) => {
     try {
 
+        
         const id = req.body.id;
         const title = req.body.title;
         const description = req.body.description;
